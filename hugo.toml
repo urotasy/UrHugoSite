@@ -1,7 +1,8 @@
 baseURL = 'http://example.org/'
 languageCode = 'ja'
 title = 'Ur Memos'
+theme = 'UrHugoTheme'
 
 [taxonomies]
-tag = "tags"
-category = "categories"
+tag = 'tags'
+category = 'categories'

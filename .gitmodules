@@ -1,0 +1,3 @@
+[submodule "themes/UrHugoTheme"]
+	path = themes/UrHugoTheme
+	url = https://github.com/urotasy/UrHugoTheme.git
