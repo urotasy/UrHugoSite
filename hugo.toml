@@ -1,0 +1,7 @@
+baseURL = 'http://example.org/'
+languageCode = 'ja'
+title = 'Ur Memos'
+
+[taxonomies]
+tag = "tags"
+category = "categories"
