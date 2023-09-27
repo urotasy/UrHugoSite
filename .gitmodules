@@ -1,3 +1,7 @@
 [submodule "themes/UrHugoTheme"]
 	path = themes/UrHugoTheme
 	url = https://github.com/urotasy/UrHugoTheme.git
+[submodule "public"]
+	path = public
+	url = https://github.com/urotasy/urotasy.github.io.git
+	branch = main
