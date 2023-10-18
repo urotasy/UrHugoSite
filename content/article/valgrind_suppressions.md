@@ -1,8 +1,8 @@
 ---
 title: "supressions file を用いて valgrind の一部のエラー検出を抑制する"
 date: 2023-10-02T23:02:24+09:00
-tags: "Tips"
-categories: "valgrind"
+tags: [ "valgrind", "debug" ]
+categories: "Tips"
 ---
 
 この記事は主に Valgrind User Manual の [2. Using and understanding the Valgrind core](https://valgrind.org/docs/manual/manual-core.html) を元に作成しました。

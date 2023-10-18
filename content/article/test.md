@@ -1,7 +1,7 @@
 ---
 title: "Test"
 date: 2023-09-27T22:17:48+09:00
-tags: "test"
+tags: [ "test" ]
 categories: "test"
 ---
 
