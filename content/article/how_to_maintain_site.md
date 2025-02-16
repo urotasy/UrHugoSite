@@ -12,4 +12,4 @@ categories: "Tips"
 1. https://github.com/urotasy/UrHugoSite を clone したレポジトリで `hugo new <new_page_path>` を実行して新しいページを作成して編集する。
 2. `hugo server -D` などでテスト後、 `hugo` コマンドで public 以下のファイルを更新する
 3. public 以下は https://github.com/urotasy/urotasy.github.io の submodule になっているので、まずそちらを commit, push する。そうすると https://urotasy.github.io/ が更新されるので、内容を確認する (少し時間がかかる場合がある)
-4. UrHugoSite レポジトリで変更を commit, push する。このとき、 public 以下を更新するために `git submodule update --remote` を実行する (このあたりの順が正しいかまだ怪しい)
+4. UrHugoSite レポジトリを更新する。まず、 public 以下を更新するために `git submodule update --remote` を実行する。このあと、 public を含めすべての変更を commit, push する。
