@@ -1,8 +1,8 @@
 ---
 title: "Hugo で新しいページを作成する方法"
 date: 2025-02-16T16:00:46+09:00
-tags: [ "diary", "software development", "job" ]
-categories: "diary"
+tags: [ "Hugo", "software development" ]
+categories: "Tips"
 ---
 
 `hugo new` コマンドを使用して新しいファイルを追加する。
