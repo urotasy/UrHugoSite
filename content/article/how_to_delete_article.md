@@ -1,5 +1,5 @@
 ---
-title: "How_to_delete_article"
+title: "Hugo で既存のページを削除する方法"
 date: 2025-02-17T21:27:22+09:00
 tags: [ "Hugo", "software development" ]
 categories: "Tips"
