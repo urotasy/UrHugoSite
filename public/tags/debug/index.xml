@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>debug on Ur Memos</title>
+    <link>http://example.org/tags/debug/</link>
+    <description>Recent content in debug on Ur Memos</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Mon, 02 Oct 2023 23:02:24 +0900</lastBuildDate><atom:link href="http://example.org/tags/debug/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>supressions file を用いて valgrind の一部のエラー検出を抑制する</title>
+      <link>http://example.org/article/valgrind_suppressions/</link>
+      <pubDate>Mon, 02 Oct 2023 23:02:24 +0900</pubDate>
+      
+      <guid>http://example.org/article/valgrind_suppressions/</guid>
+      <description>この記事は主に Valgrind User Manual の 2. Using and understanding the Valgrind core を元に作成しました。
+概要 valgrind を利用してメモリリークなどエラーの検出をしていると、自分の開発しているもの以外のエラーを検出してしまうことがある。場合によっては関係のないエラーが多すぎて自分の開発しているものに由来するエラーが見つけられなくなってしまうことがある。
+その場合、valgrind の --suppressions オプションの引数に特定の形式のテキストファイルを渡すことで対象のエラーを抑制することができる。引数に渡すテキストファイルを最も簡単に生成するには、--gen-suppressions=yes を指定して valgrind を実行すればよい。検出されたエラー毎にそのエラーを抑制するための文字列を出力するか否か選べるので、必要なものを suppressions file にコピーすればよい。検出されたエラーすべてを抑制したい場合には --gen-suppressions=all を実行するとすべてのエラー毎に抑制するための文字列を出力する。
+また、複数の --suppressions オプションを指定することで、複数の suppressions file を使ってエラーを抑制することができる。
+suppressions file の詳細 具体例としては /usr/lib/valgrind/default.supp を見るとよい。 suppressions file は個別の抑制を { と } で囲んだ中に指定し、{ と } で囲まれたものを列挙するという形式になっている。この { と } は行頭に書かねばならない。以降、{ と } で囲んだ中の記述方法について説明する。
+1 行目 suppressions file の名前を書く。valgrind のログの summary に出力されるだけ。
+2 行目 カンマ区切りで suppression 対象のツール名と、 その後ろにコロンと suppression そのものの名前を書く。例えば tool_name1,tool_name2:suppression_name のような形式になる。対象のツールに関係のない suppression は無視されるだけなので、とりあえず全てのツール名を書いておいてよい。</description>
+    </item>
+    
+  </channel>
+</rss>

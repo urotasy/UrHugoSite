@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html><body><a href="/" class="title">
+  <h2>Ur Memos</h2>
+</a>
+<div id="content">
+  <!-- _default/single.html start -->
+  <p>この記事は主に Valgrind User Manual の <a href="https://valgrind.org/docs/manual/manual-core.html">2. Using and understanding the Valgrind core</a> を元に作成しました。</p>
+<h1 id="概要">概要</h1>
+<p>valgrind を利用してメモリリークなどエラーの検出をしていると、自分の開発しているもの以外のエラーを検出してしまうことがある。場合によっては関係のないエラーが多すぎて自分の開発しているものに由来するエラーが見つけられなくなってしまうことがある。</p>
+<p>その場合、valgrind の <code>--suppressions</code> オプションの引数に特定の形式のテキストファイルを渡すことで対象のエラーを抑制することができる。引数に渡すテキストファイルを最も簡単に生成するには、<code>--gen-suppressions=yes</code> を指定して valgrind を実行すればよい。検出されたエラー毎にそのエラーを抑制するための文字列を出力するか否か選べるので、必要なものを suppressions file にコピーすればよい。検出されたエラーすべてを抑制したい場合には <code>--gen-suppressions=all</code> を実行するとすべてのエラー毎に抑制するための文字列を出力する。</p>
+<p>また、複数の <code>--suppressions</code> オプションを指定することで、複数の suppressions file を使ってエラーを抑制することができる。</p>
+<h1 id="suppressions-file-の詳細">suppressions file の詳細</h1>
+<p>具体例としては <code>/usr/lib/valgrind/default.supp</code> を見るとよい。
+suppressions file は個別の抑制を <code>{</code> と <code>}</code> で囲んだ中に指定し、<code>{</code> と <code>}</code> で囲まれたものを列挙するという形式になっている。この <code>{</code> と <code>}</code> は行頭に書かねばならない。以降、<code>{</code> と <code>}</code> で囲んだ中の記述方法について説明する。</p>
+<h2 id="1-行目">1 行目</h2>
+<p>suppressions file の名前を書く。valgrind のログの summary に出力されるだけ。</p>
+<h2 id="2-行目">2 行目</h2>
+<p>カンマ区切りで suppression 対象のツール名と、 その後ろにコロンと suppression そのものの名前を書く。例えば <code>tool_name1,tool_name2:suppression_name</code> のような形式になる。対象のツールに関係のない suppression は無視されるだけなので、とりあえず全てのツール名を書いておいてよい。</p>
+<h2 id="3-行目">3 行目</h2>
+<p>2 行目に対する付加情報を書くらしい。省略可能っぽいがよくわからない。</p>
+<h2 id="残りの行">残りの行</h2>
+<p>抑制したいエラーの原因となるものを指定する。共有オブジェクト、関数、ソースコードの行の指定が可能になっており、それぞれ <code>obj:</code>、<code>fun:</code>、<code>src:</code> で指定する。オブジェクト名と関数名、ファイル名の指定にはワイルドカード <code>*</code> と <code>?</code> を利用することが可能である。ソースコードの行は <code>filename:lineno</code> の形式で指定する。この行は <code>...</code> を指定してもよく、その場合フレームレベルのワイルドカードとなる (その階層はあってもよいし、いくつあってもよい)。</p>
+<p>C++ では関数名はマングリング済みでなければならない。<code>--gen-suppressions</code> を指定するとき同時に <code>--demangle=no</code> を指定すればマングリング済みの関数名を取得することができる。</p>
+<h1 id="おまけ">おまけ</h1>
+<ul>
+<li>suppressions file の拡張子は .supp らしい</li>
+<li>suppressions file は <code>#</code> 始まりの行をコメントとして認識する</li>
+</ul>
+
+  <!-- _default/single.html end -->
+
+        </div></body>
+</html>
